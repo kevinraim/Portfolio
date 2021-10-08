@@ -1,3 +1,34 @@
+/*GENERALES*/
+.btn{
+    background-color: #ffffff;
+    border-radius: 24px;
+    border-style: none;
+    box-shadow: rgb(0 0 0 / 20%) 0 3px 5px -1px, rgb(0 0 0 / 14%) 0 6px 10px 0, rgb(0 0 0 / 12%) 0 1px 18px 0;
+    color:black;
+}
+
+.btn:hover{
+    background-color: gray;
+    color: #ffffff;
+}
+
+
+h1{
+    font-size: 65px;
+}
+
+h3{
+    font-size: 28px;
+    color: #c7c7df;
+}
+
+p{
+    font-size: 22px;
+}
+/*FIN GENERALES*/
+
+
+/*NAVBAR HEADER*/
 .navbar-nav {
     float:none;
     margin:0 auto;
@@ -27,6 +58,31 @@
     color: white;
 }
 
+.navbar_links {
+    position: relative;
+}
+  
+.navbar_links:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #12dbce;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.navbar_links:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+/*FIN*/
+
+
+/*INICIO*/
 .principal_container{
     background-image: url(../assets/compu.jpg);
     background-size: cover;
@@ -46,38 +102,18 @@
     blink-caret .5s step-end infinite;
 }
 
-.btn{
-    border-width: 0;
-    background-color: #261c73;
-}
-
-.btn:hover{
-    background-color: #12c2b6;
-    color: #ffffff;
-}
-
 .btn_hablemos{
-    background-color: #12c2b6;
-    color: white;
+    background-color: #12dbce;
+    color: rgb(36, 36, 36);
 }
 
 .btn_hablemos:hover{
-    background-color: gray;
+    background-color: #ffffff;
+    color: black;
 }
+/*FIN*/
 
-h1{
-    font-size: 65px;
-}
-
-h3{
-    font-size: 30px;
-    color: #c7c7df;
-}
-
-p{
-    font-size: 22px;
-}
-
+/*TECNOLOGIAS*/
 .imagenIcon{
     width: 100%;
     height: auto;
@@ -94,8 +130,8 @@ p{
     display:flex;
     align-items:center;
     justify-content:center;
-  }
-  .box{
+}
+.box{
     margin: 2%;
     margin-bottom: 15px;
     background:white;
@@ -103,20 +139,25 @@ p{
     box-shadow:0 2px 3px 0px rgba(0,0,0,0.25);
     border-radius:50%;
     transition:.2s all; 
-  }
-  .box-wrap:hover .box{
+}
+
+.box-wrap:hover .box{
     filter:blur(3px);
     opacity:.5;
     transform: scale(.98);
     box-shadow:none;
-  }
-  .box-wrap:hover .box:hover{
+}
+
+.box-wrap:hover .box:hover{
     transform:scale(1);
     filter:blur(0px);
     opacity:1;
     box-shadow:0 8px 20px 0px rgba(0,0,0,0.125);
 }
+/*FIN TECNOLOGIAS*/
 
+
+/*CONTACTO*/
 .form_input {
     font-family: inherit;
     width: 100%;
@@ -129,10 +170,10 @@ p{
 }
   
 .form_label {
-  display: block;
-  transition: 0.2s;
-  font-size: 1rem;
-  color: gray;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: gray;
 }
   
 .form_input:focus {
@@ -141,8 +182,9 @@ p{
     border-width: 3px;
     border-image: linear-gradient(to right, #4bc0b8, #12dbce);
     border-image-slice: 1;
-  }
-  .form_input:focus ~ .form_label {
+}
+
+.form_input:focus ~ .form_label {
     display: block;
     transition: 0.2s;
     font-size: 1rem;
@@ -158,7 +200,39 @@ p{
     font-size: 18px;
     color:#261c73;
 }
+/*FIN CONTACTO*/
 
+/*PROYECTOS*/
+.imagen_proyectos_container{
+    clip-path: polygon(100% 0, 100% 50%, 100% 100%, 0% 100%, 0 50%, 0% 0%);
+    transition: transform 0.5s ease-out,
+    clip-path 0.5s ease-out;
+}
+
+.imagen_proyectos_container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translateX(-10%);
+    transition: transform 0.5s ease-out;
+}
+
+.imagen_proyectos_container:hover{
+    clip-path: polygon(100% 0%, 100% 50%, 100% 100%, 0% 100%, 25% 50%, 0% 0%);
+}
+
+.imagen_proyectos_container_der{
+    clip-path: polygon(100% 0, 100% 50%, 100% 100%, 0% 100%, 0 50%, 0% 0%);
+    transition: transform 0.5s ease-out,
+    clip-path 0.5s ease-out;
+}
+
+.imagen_proyectos_container_der:hover{
+    clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 0 100%, 0% 50%, 0 0);
+}
+/*FIN PROYECTOS*/
+
+/*MEDIAS QUERIES*/
 @media only screen and (max-width: 768px) {
     .principal_container{
         min-height: 600px;
@@ -168,6 +242,15 @@ p{
     h1{
         font-size: 50px;
         color: #dfdffb;
+    }
+
+    p{
+        font-size: 19px;
+    }
+
+    .imagen_contacto_container{
+        width: 80%;
+        height: auto;
     }
 }
 
